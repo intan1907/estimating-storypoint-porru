@@ -92,6 +92,11 @@ clf.fit(train_x, numpy.floor(train_y))
 predict = clf.predict(test_x)
 print(predict)
 
+# save model
+model_file = 'trained_model/' + saving + '.pkl'
+with open(model_file, 'wb') as pickle_file:
+    _pickle.dump(clf, pickle_file)
+
 numpy.savetxt('log/output/' + saving + "_actual.csv", test_y, delimiter=",")
 numpy.savetxt('log/output/' + saving + "_estimate.csv", predict, delimiter=",")
 
