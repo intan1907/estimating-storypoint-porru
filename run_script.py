@@ -16,26 +16,23 @@ datasetPorru = ['apstud_porru', 'dnn_porru', 'mesos_porru', 'mule_porru', 'nexus
 #     os.system(cmd)
 
 # run divide data
-# for project in dataset:
-#     cmd = 'python divide_data_sortdate.py ' + project
-#     print(cmd)
-#     os.system(cmd)
+for project in dataset:
+    cmd = 'python divide_data_sortdate.py ' + project
+    print(cmd)
+    os.system(cmd)
 
 # run preprocess
-# for project in datasetPorru:
-#     cmd = 'python preprocess.py ' + project
-#     print(cmd)
-#     os.system(cmd)
+for project in datasetPorru:
+    cmd = 'python preprocess.py ' + project
+    print(cmd)
+    os.system(cmd)
 
 # run Porru's model
 note = '4_porru_method'
 for project in datasetPorru:
-    if project != 'nexus_porru':
-        continue
     cmd = 'python porrumethod.py ' + project + ' ' + project + '_porru_method'
     print(cmd)
     os.system(cmd)
-
     
     print('compute error')
     cmd = 'python measurement.py -project ' + project + ' -fileName ' + project + '_porru_method' + ' -note ' + note
