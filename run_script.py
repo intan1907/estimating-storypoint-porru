@@ -6,15 +6,6 @@ dataset = ['apstud', 'dnn', 'mesos', 'mule', 'nexus', 'timob', 'tistud', 'xd']
 datasetPorru = ['apstud_porru', 'dnn_porru', 'mesos_porru', 'mule_porru', 'nexus_porru', 'timob_porru', 'tistud_porru', 'xd_porru']
 # datasetPorru = ['timob_porru']
 
-
-# run DatatoCSV.py
-# from database to csv
-# print('Dataset to CSV')
-# for project in dataset:
-#     cmd = 'python DatatoCSV.py ' + project
-#     print(cmd)
-#     os.system(cmd)
-
 # run divide data
 for project in dataset:
     cmd = 'python divide_data_sortdate.py ' + project
